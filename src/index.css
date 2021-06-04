@@ -11,3 +11,69 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.flex-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.check_box{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  vertical-align: center;
+}
+.error-message{
+  color: red;
+  font-size: 14px;
+}
+.post{
+  position: relative;
+  flex-shrink:0;
+  width: 200px;
+  border-radius: 8px 8px 0px 0px
+}
+.post-background{
+  background: #D2FCE5;
+}
+.post-body{
+  height: 200px
+}
+.backdrop{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 100;
+}
+.backdrop-overlay{
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  z-index: 101;
+  opacity: 1;
+  transform: translate(50%,-50%);
+}
+.backdrop1{
+  position: absolute;
+  z-index: 200;
+  vertical-align: middle;
+  text-align: center
+}
+.backdrop2{
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  z-index: 201;
+  opacity: 1;
+  transform: translate(50%,-50%);
+  color: black
+}

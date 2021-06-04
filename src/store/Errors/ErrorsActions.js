@@ -1,0 +1,4 @@
+
+export const ERRORS_ACTIONS = {
+    SET_MESSAGE: "ERRORS/SET_MESSAGE_ERROR"
+}
