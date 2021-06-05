@@ -18,8 +18,6 @@ function PostsReducer(state=initialState, action) {
         case POSTS_ACTIONS.GET_POSTS:
             return {
                 ...state,
-                loading: false,
-                isFullFeed: true,
                 posts: action.payload
             }
         case POSTS_ACTIONS.TOGGLE_LOADING:

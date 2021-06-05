@@ -44,6 +44,7 @@ export const getPosts = () => async dispatch => {
     PostsService.getPosts()
     .then(response => {
         dispatch(toggleLoading(false));
+        dispatch(toggleIsFullFeed(true));
         dispatch({
             type: POSTS_ACTIONS.GET_POSTS,
             payload: response.data
