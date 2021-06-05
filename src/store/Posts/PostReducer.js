@@ -7,9 +7,9 @@ const initialState = {
     isFullFeed: false,
     postLoading: false,
     postOpenModal: false,
-    post: null,
-    getPostLoading: true,
     deleting: false,
+    errorMessage: '',
+    search: '',
     posts: []
 }
 
@@ -42,20 +42,20 @@ function PostsReducer(state=initialState, action) {
                 ...state,
                 postLoading: action.payload
             }
-        case POSTS_ACTIONS.TOGGLE_GET_POST_LOADING:
-            return {
-                ...state,
-                getPostLoading: action.payload
-            }
-        case POSTS_ACTIONS.GET_POST:
-            return {
-                ...state,
-                post: action.payload
-            }
         case POSTS_ACTIONS.TOGGLE_DELETING:
             return {
                 ...state,
                 deleting: action.payload
+            }
+        case POSTS_ACTIONS.TYPE_SEARCH:
+            return {
+                ...state,
+                search: action.payload
+            }
+        case POSTS_ACTIONS.SET_ERROR_MESSAGE:
+            return {
+                ...state,
+                errorMessage: action.payload
             }
         default:
             return state;

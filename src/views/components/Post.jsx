@@ -4,7 +4,7 @@ import { substrText } from "../../helpers/substrText";
 import { connect } from 'react-redux';
 import { deletePost } from '../../store/Posts/PostActions';
 
-function PostComponent({ post, handleShow, deletePost }) {
+function PostComponent({ post, handleShow, deletePost, handleCheckboxChange, handleShow2 }) {
     const deleteThePost = () => {
         const message = "Are you sure to delete Post ?"
         if(window.confirm(message)){
@@ -15,11 +15,7 @@ function PostComponent({ post, handleShow, deletePost }) {
         <>
             <div className="mr-2 mb-2 post">
                 <div className="check_box">
-                    <Form.Check
-                        type="checkbox"
-                        label=""
-                        custom
-                    />
+                    <input type="checkbox" value={ post.id } onChange={ handleCheckboxChange } />
                 </div>
                 <div className="post-body post-background py-3">
                     <h2>{substrText(post.title)}</h2>
@@ -29,7 +25,7 @@ function PostComponent({ post, handleShow, deletePost }) {
                 </div>
                 <div className="post-background pb-3">
                     <div style={{ float: 'right' }}>
-                        <Link to='/'>Read More ...</Link>
+                        <Link to='/' style={{ textDecoration: 'underline' }} onClick={event => handleShow2(event, post.id)}>Read More ...</Link>
                     </div>
                     <div style={{ clear: 'both' }}></div>
                 </div>

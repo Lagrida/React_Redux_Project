@@ -2,11 +2,11 @@ import {applyMiddleware, createStore, combineReducers} from "redux";
 import { composeWithDevTools } from 'redux-devtools-extension';
 import thunkMiddleware from 'redux-thunk'
 import PostsReducer, { postsFeatureKey } from "./Posts/PostReducer";
-import ErrorsReducer from "./Errors/ErrorsReducer";
+import ErrorsReducer, { errorsFeatureKey } from "./Errors/ErrorsReducer";
 
 const reducers =  combineReducers({
     [postsFeatureKey]: PostsReducer,
-    errorsState: ErrorsReducer
+    [errorsFeatureKey]: ErrorsReducer
 });
 
 function configureStore(preloadedState) {
